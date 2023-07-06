@@ -5,64 +5,76 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+
+    public static List<Person> studants = new ArrayList<Person>();
+    public static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
+        boolean exit = true;
+        while (exit) {
 
+            System.out.println("------------Sistema--------------");
+            System.out.println("------Escolha Uma Das Opções!------");
+            System.out.println("1 - Cadastrar");
+            System.out.println("2 - Buscar");
+            System.out.println("3 - Remover");
+            System.out.println("4 - Editar");
+            System.out.println("5 - Sair \n\n");
 
-List<Person> studants = new ArrayList<Person>();
-boolean exit = true;
-while (exit){
-            
-        
-        Scanner scanner = new Scanner(System.in);
+            int option = scanner.nextInt();
 
-    System.out.println("------------Sistema--------------");
-    System.out.println("------Escolha Uma Das Opções!------");
-    System.out.println("1 - Cadastrar");
-    System.out.println("2 - Buscar");
-    System.out.println("3 - Sair \n\n");
+            switch (option) {
+                case 1:
 
-    int option = scanner.nextInt();
+                    addStudant(studants);
 
+                    break;
 
+                case 2:
 
-    switch (option){
-    case 1 :
+                    System.out.println(" \n Qual o nome que deseja buscar?");
+                    String nameToFind = scanner.next();
+                    findStudant(studants, nameToFind);
 
-        addStudant(studants);
+                    break;
 
-        break;
+                case 3:
 
-    case 2 :
-    
-        System.out.println(" \n Qual o nome que deseja buscar?");
-        String nameToFind = scanner.next();
-        findStudant(studants, nameToFind);
+                    removeStudant();
 
-        break;
+                    break;
 
+                case 4:
 
-    case 3 :
+                    editStudant();
 
-        System.out.println("SAINDO...");
-        System.out.println("SAINDO..");
-        System.out.println("SAINDO.");
-        exit = false;
-        break;
+                    break;
 
-    
-    default:
+                case 5:
 
-        System.out.println("OPÇÃO INVALIDA! OU INCORRETA");
+                    System.out.println("SAINDO...");
+                    // delay(500);
+                    System.out.println("SAINDO..");
+                    // delay(500);
+                    System.out.println("SAINDO.");
+                    // delay(500);
+                    exit = false;
 
-        exit = false;
-        break;
+                    break;
+
+                default:
+
+                    System.out.println("OPÇÃO INVALIDA! OU INCORRETA");
+
+                    exit = false;
+                    break;
 
             }
         }
     }
+    
 
-    private static void addStudant(List<Person> studants){
-
+    private static void addStudant(List<Person> studants) {
         Person studant = new Person();
         Scanner scanner = new Scanner(System.in);
 
@@ -73,18 +85,52 @@ while (exit){
 
     }
 
+    private static Integer findStudant(List<Person> studants, String studantName) {
+        Integer position =  null;
 
-
-
-
-    private static void findStudant (List<Person> studants, String studantName) {
-
-        for(int count = 0; count < studants.size(); count++){
+        for (int count = 0; count < studants.size(); count++) {
             Person student = studants.get(count);
 
-            if(student.name.equals(studantName)){
+            if (student.name.equals(studantName)) {
+                position = count;
                 System.out.println("Encontrei o :" + studantName);
+            }else {
+                System.out.println("Não Encontrei o Aluno!");
             }
         }
+        return position;
     }
+
+    private static void removeStudant() {
+
+        System.out.println("Qual o Nome Que Deseja Remover?");
+        String name = scanner.next();
+        Integer position = findStudant(studants, name);
+        if (position != null) {
+
+            studants.remove(position.intValue());
+            System.out.print("Aluno Removido!");
+            
+        }else{
+            System.out.println("Aluno Não Encontrado!");
+        }
+
+    }
+
+    private static void editStudant() {
+
+        System.out.println("Qual Nome Que Deseja Editar?");
+        String name = scanner.next();
+        Integer position = findStudant(studants, name);
+        if(position != null){
+            Person p1 = studants.get(position.intValue());
+            System.out.println("Qual Seria Novo Nome?");
+            name = scanner.next();
+            p1.name = name;
+
+
+        } 
+
+    }
+    
 }
