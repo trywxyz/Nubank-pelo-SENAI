@@ -19,7 +19,8 @@ public class Main {
             System.out.println("2 - Buscar");
             System.out.println("3 - Remover");
             System.out.println("4 - Editar");
-            System.out.println("5 - Sair \n\n");
+            System.out.println("5 - Listar");
+            System.out.println("6 - Sair \n\n");
 
             int option = scanner.nextInt();
 
@@ -52,6 +53,12 @@ public class Main {
 
                 case 5:
 
+                    listStudant();
+
+                    break;
+
+                case 6:
+
                     System.out.println("SAINDO...");
                     // delay(500);
                     System.out.println("SAINDO..");
@@ -72,21 +79,25 @@ public class Main {
             }
         }
     }
-    
 
     private static void addStudant(List<Person> studants) {
         Person studant = new Person();
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Digite o nome completo do estudante:");
-        studant.name = scanner.nextLine();
+        System.out.println("Digite o Nome Completo do Estudante:");
+        studant.name = scanner.next();
+        System.out.println("Digite a Idade do Estudante");
+        studant.age = scanner.nextInt();
+        System.out.println("Digite o Sexo do Aluno!");
+        studant.sexo = scanner.next();
+        // studant.toUppercase();
         studants.add(studant);
-        System.out.println("\n" + studant.name + ",Aluno Cadastrado Com Sucesso! \n");
+        System.out.println("\nAluno ," + studant.name + " Com " + studant.age + " Anos Cadastrado Com Sucesso! \n");
 
     }
 
     private static Integer findStudant(List<Person> studants, String studantName) {
-        Integer position =  null;
+        Integer position = null;
 
         for (int count = 0; count < studants.size(); count++) {
             Person student = studants.get(count);
@@ -94,11 +105,34 @@ public class Main {
             if (student.name.equals(studantName)) {
                 position = count;
                 System.out.println("Encontrei o :" + studantName);
-            }else {
+            } else {
                 System.out.println("Não Encontrei o Aluno!");
             }
         }
         return position;
+    }
+
+    private static void listStudant() {
+        int countm = 0;
+        int countf = 0;
+
+        for (int i = 0; i < studants.size(); i++) {
+            if (studants.get(i).sexo.equals("masculino")) {
+                countm++;
+            } else {
+                countf++;
+            }
+
+        }
+        System.out.println("Masculino: " + countm + " Feminino: " + countf);
+
+        for (int i = 0; i < studants.size(); i++) {
+
+            System.out.println("Nome: " + studants.get(i).name + " Sexo: " + studants.get(i).sexo + " Idade: "
+                    + studants.get(i).age);
+
+        }
+
     }
 
     private static void removeStudant() {
@@ -110,8 +144,8 @@ public class Main {
 
             studants.remove(position.intValue());
             System.out.print("Aluno Removido!");
-            
-        }else{
+
+        } else {
             System.out.println("Aluno Não Encontrado!");
         }
 
@@ -122,15 +156,14 @@ public class Main {
         System.out.println("Qual Nome Que Deseja Editar?");
         String name = scanner.next();
         Integer position = findStudant(studants, name);
-        if(position != null){
+        if (position != null) {
             Person p1 = studants.get(position.intValue());
             System.out.println("Qual Seria Novo Nome?");
             name = scanner.next();
             p1.name = name;
 
-
-        } 
+        }
 
     }
-    
+
 }
