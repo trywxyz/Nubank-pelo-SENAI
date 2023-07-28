@@ -3,9 +3,8 @@ package com.example.appsenai.model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 
-@EntityScan
+@Entity
 public class Person {
 
     @Id
