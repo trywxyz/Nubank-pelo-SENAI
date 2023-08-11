@@ -1,0 +1,35 @@
+body{
+    background-image:url(./wallpaper.avif);
+    background-size:100%;
+    font-family: Verdana;
+}
+
+div{
+    height:280px;
+    width:450px;
+    background-color:white;
+    border-radius:20px;
+    display:block;
+    color: black;
+    text-align:center;
+    margin:15px;
+    margin-left:400px;
+}
+input{
+    margin:10px;
+}
+button{
+    width:100px;
+    height: 40px;
+    border-radius:100px;
+}
+form{
+    border-radius:50%;
+    align-items:center;
+
+
+}
+.logo{
+    margin-left:530px;
+
+}
