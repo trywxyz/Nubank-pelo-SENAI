@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento Da Conta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <img src="https://ava.sesisenai.org.br/pix/sesi-senai-branca.webp" alt="Imagemsenai" width="210px" class="logo">
+    <br>
+    <a href="index.html" class="link">Cadastro De Pessoa</a>
+    <a href="conta.html" class="link">Cadastro De Conta Corrente</a>
+    <a href="gerencia.html" class="link">Gerenciamento Da Conta</a>
+    <a href="contato.html" class="link">Contatos</a>
+    <div class="cont">
+
+        <h1>Gerenciamento de conta:</h1>
+        <hr>
+
+        <label for="depositar">Depositar:</label><br>
+        <label for="pessoa">Selecione a conta</label><br>
+        <select id="pessoa"></select><br>
+
+        <label for="depositar">Valor R$</label><br>
+        <input id="depositar" type=text required><br>
+        <button type="button">Depositar agora</button><br>
+
+    </div>
+    <div>
+
+
+        <label for="sacar">Sacar:</label><br><br>
+        <label for="pessoa1">Selecione a conta</label><br><br><br>
+        <select id="pessoa1"></select><br>
+
+        <label for="sacar">Valor R$</label><br>
+        <input id="sacar" type=text required><br><br>
+        <button type="button">Sacar agora</button><br>
+
+    </div>
+
+    <div>
+
+        <label for="quantidade">Transferir:</label><br>
+        <label for="pessoa2">Selecione a pessoa de origem</label><br>
+        <select id="pessoa2"></select><br><br>
+
+        <label for="pessoa3">Selecione a pessoa de destino</label><br>
+        <select id="pessoa3"></select><br><br>
+
+        <label for="quantidade">Valor R$</label><br>
+        <input id="quantidade" type=text required><br><br>
+        <button type="button">Transferir</button>
+
+
+
+
+    </div>
+
+    <script src="gerenciar.js">
+    </script>
+
+</body>
+
+</html>

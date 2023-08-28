@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco Digital Senai</title>
+    <link rel="icon"
+        href="https://yt3.googleusercontent.com/l1cA_ZiBK75KPC5s-f38D8G_sGvY1LRU9Hi8OSkvFUPNijamzL6hPtb59MrgNr8c6QvQZl07Ew=s900-c-k-c0x00ffffff-no-rj">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <img src="https://ava.sesisenai.org.br/pix/sesi-senai-branca.webp" alt="Imagemsenai" width="210px" class="logo">
+    <br>
+    <a href="index.html" class="link">Cadastro De Pessoa</a>
+    <a href="conta.html" class="link">Cadastro De Conta Corrente</a>
+    <a href="gerencia.html" class="link">Gerenciamento Da Conta</a>
+    <a href="contato.html" class="link">Contatos</a>
+
+    <div>
+
+        <h1>Cadastro De Pessoas</h1>
+        <hr>
+        <form action="" id="form">
+            <label for="id" class="id">ID:</label>
+            <input type="text" id="id" readonly>
+            <br>
+            <label for="name" class="name">NAME:</label>
+            <input type="text" id="name" name="name" required placeholder=" Insira Seu Nome">
+            <br>
+            <label for="sexo" class="sex" >SEXO:</label>
+            <input type="text" id="sexo" name="sexo" required placeholder=" Insira Seu Sexo">
+            <br>
+
+            <button id="submit" class="salvar">Submit!</button>
+            <button id="excluir" class="excluir">Delete!</button>
+        </form>
+    </div>
+    <div>
+        <br>
+        <button type="button" class="bt" id="listarPessoas">Listar Pessoas</button>
+        <table id="tabelaPessoas">
+            <hr>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Sexo</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <!-- JD vai preencher-->
+
+            </tbody>
+
+        </table>
+
+
+    </div>
+    <script src="./index.js"></script>
+</body>
+
+</html>
