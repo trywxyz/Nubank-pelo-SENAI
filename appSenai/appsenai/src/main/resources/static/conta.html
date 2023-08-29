@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conta Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon"
+        href="https://yt3.googleusercontent.com/l1cA_ZiBK75KPC5s-f38D8G_sGvY1LRU9Hi8OSkvFUPNijamzL6hPtb59MrgNr8c6QvQZl07Ew=s900-c-k-c0x00ffffff-no-rj">
+</head>
+
+
+<body>
+    <img src="https://ava.sesisenai.org.br/pix/sesi-senai-branca.webp" alt="Imagemsenai" width="210px" class="logo">
+    <br>
+    <a href="index.html" class="link">Cadastro De Pessoa</a>
+    <a href="conta.html" class="link">Cadastro De Conta Corrente</a>
+    <a href="gerencia.html" class="link">Gerenciamento Da Conta</a>
+    <a href="contato.html" class="link">Contatos</a>
+
+    <br><br>
+    <div>
+        <!-- <h1>Cadastro Da Conta Corrente</h1>
+        <hr> -->
+        <form id="formConta">
+            <label for="numero_conta"><strong>Numero Da Conta</strong></label>
+            <br>
+            <input type="text" id="numero_conta" name="numero_conta"readonly>
+            <br>
+
+            <label for="saldo"><strong>Saldo</strong></label>
+            <br>
+            <input type="text" id="saldo" name="saldo" readonly>
+
+            <br><br>
+
+            <label for="tipo_conta" id="tipo_conta">Selecione o Tipo Da Conta:</label>
+            <select name="tipo_conta" id="tipo_conta">
+                <option value="Corrente">Conta Corrente</option>
+                <option value="Poupanca">Conta Poupança</option>
+            </select>
+            <br><br>
+
+            <label for="pessoa" >Seleciona Uma Pessoa</label>
+            <select id="pessoa" name="pessoa"></select>
+
+            <p>
+
+                <button type="button" id="criar" name="criar">Cadastrar Conta!</button>
+
+        </form>
+    </div>
+    <div class="w">
+        <button type="button"  id="listarPessoas">Listar Contas:</button>
+        <table id="tabelaPessoas">
+            <hr>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Saldo </th>
+                    <th>Tipo da conta</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <!-- JD vai preencher-->
+            </tbody>
+
+        </table>
+
+
+    </div>
+
+
+
+    <script src="./conta.js"></script>
+</body>
+
+</html>
