@@ -7,3 +7,5 @@ App básico para simular os conhecimentos adquiridos durante o curso de Analise 
 #no pacote View, temos o BancoView, responsável por todas as chamadas referente a criação de contas, #saque, deposito e transferência entre as contas existentes no projeto. Na classe PersonView, consta #as chamadas referente a criação de pessoas e remoção de pessoas
 
 #na parte de HTML e .JS, temos toda a interface da nossa aplicação Web, desde o cadastro de pessoas #até a transferência entre contas #na parte .css, pouco foi utilizada.
+
+![img.png](img.png)
